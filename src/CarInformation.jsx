@@ -5,10 +5,11 @@ function CarInformation({ kenteken }) {
     const [carData, setCarData] = useState([]);
 
     useEffect(() => {
+        const formattedKenteken = kenteken.toUpperCase();
 
         const fetchData = async () => {
             const result = await axios(
-                `https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken=${kenteken}`
+                `https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken=${formattedKenteken}`
             );
             setCarData(result.data);
         };
