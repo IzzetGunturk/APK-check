@@ -19,7 +19,7 @@ function CarInformation({ kenteken }) {
 return (
     <section>
          {carData.map((car) => {
-            return <div className='pt-9 flex flex-row gap-1 justify-center' key={car.kenteken}>
+            return <div className='pt-9 flex flex-row gap-1 justify-center text-xl' key={car.kenteken}>
                 <div>{car.merk}</div>
                 <div>{car.handelsbenaming}</div>
             </div>
@@ -30,7 +30,7 @@ return (
             const maand = vervaldatumApk.slice(4, 6);
             const jaar = vervaldatumApk.slice(0, 4);
             const datum = `${dag}-${maand}-${jaar}`;
-            return <div className='pt-9 text-center' key={car.kenteken}>Your license plate expires on: <strong>{datum}</strong></div>;
+            return <div className='pt-9 text-center text-base' key={car.kenteken}>Your license plate expires on: <strong className='underline'>{datum}</strong></div>;
         })}
     </section>
 )};
