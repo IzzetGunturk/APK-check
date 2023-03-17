@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import CarInformation from './CarInformation';
 
 function App() {
-  const [kenteken, setKenteken] = useState('');
+  const [licensePlate, setLicensePlate] = useState('');
 
   const handleInputChange = (event) => {
-  setKenteken(event.target.value);
+  setLicensePlate(event.target.value);
 }
 
 return (
@@ -25,7 +25,7 @@ return (
           <div className="relative">
             <input type="text" className="w-full rounded-lg p-4 pr-12 text-sm bg-[#ebebeb]"
               placeholder="Enter your license plate: H405TG" onChange={handleInputChange} />
-            <CarInformation kenteken={kenteken} />
+            <CarInformation kenteken={licensePlate} />
           </div>
         </div>
       </form>
