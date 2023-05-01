@@ -30,7 +30,7 @@ return (
             const maand = vervaldatumApk.slice(4, 6);
             const jaar = vervaldatumApk.slice(0, 4);
             const datum = `${dag}-${maand}-${jaar}`;
-            return <div className='pt-9 text-center text-base' key={car.kenteken}>Your license plate expires on: <strong className='underline'>{datum}</strong></div>;
+            return <div className='pt-9 text-center text-base' key={car.kenteken}>Your APK expires on: <strong className='underline'>{datum}</strong></div>;
         })}
     </section>
 )};
