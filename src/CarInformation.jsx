@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function CarInformation({ kenteken }) {
+function CarInformation({ licensePlate }) {
     const [carData, setCarData] = useState([]);
 
     useEffect(() => {
-        const formattedKenteken = kenteken.toUpperCase();
+        const formattedLicensePlate = licensePlate.toUpperCase();
 
         const fetchData = async () => {
             const result = await axios(
-                `https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken=${formattedKenteken}`
+                `https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken=${formattedLicensePlate}`
             );
             setCarData(result.data);
         };
         fetchData();
-    }, [kenteken]);
+    }, [licensePlate]);
 
 return (
     <section>
@@ -25,12 +25,12 @@ return (
             </div>
         })}
         {carData.map((car) => {
-            const vervaldatumApk = car.vervaldatum_apk;
-            const dag = vervaldatumApk.slice(6, 8);
-            const maand = vervaldatumApk.slice(4, 6);
-            const jaar = vervaldatumApk.slice(0, 4);
-            const datum = `${dag}-${maand}-${jaar}`;
-            return <div className='pt-9 text-center text-base' key={car.kenteken}>Your APK expires on: <strong className='underline'>{datum}</strong></div>;
+            const expireDateApk = car.vervaldatum_apk;
+            const day = expireDateApk.slice(6, 8);
+            const month = expireDateApk.slice(4, 6);
+            const year = expireDateApk.slice(0, 4);
+            const date = `${day}-${month}-${year}`;
+            return <div className='pt-9 text-center text-base' key={car.kenteken}>Your APK expires on: <strong className='underline'>{date}</strong></div>;
         })}
     </section>
 )};
