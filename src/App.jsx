@@ -3,9 +3,11 @@ import CarInformation from './CarInformation';
 
 function App() {
   const [licensePlateSearch, setLicensePlateSearch] = useState('');
+  const [error, setError] = useState('');
 
   const handleInputChange = (event) => {
   setLicensePlateSearch(event.target.value);
+  setError('');
 }
 
 return (
@@ -24,8 +26,9 @@ return (
         <div>
           <div className="relative">
             <input type="text" className="w-full rounded-lg p-4 pr-12 text-sm bg-[#ebebeb]"
-              placeholder="Enter your license plate: H405TG" onChange={handleInputChange} />
-            <CarInformation licensePlate={licensePlateSearch} />
+              placeholder="Enter your license plate: H405TG" maxLength={6} onChange={handleInputChange} />
+            {licensePlateSearch && <CarInformation licensePlate={licensePlateSearch} setError={setError} /> }
+            <div className='text-red-500 pt-4'>{error}</div>
           </div>
         </div>
       </form>

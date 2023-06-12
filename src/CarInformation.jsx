@@ -1,20 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function CarInformation({ licensePlate }) {
+function CarInformation({ licensePlate, setError }) {
     const [carData, setCarData] = useState([]);
 
     useEffect(() => {
         const formattedLicensePlate = licensePlate.toUpperCase();
 
         const fetchData = async () => {
-            const result = await axios(
-                `https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken=${formattedLicensePlate}`
-            );
-            setCarData(result.data);
+            try {
+                const result = await axios(
+                    `https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken=${formattedLicensePlate}`
+                );
+                if (result.data.length > 0) {
+                    setCarData(result.data);
+                    setError('');
+                }
+                else {
+                    setError("License plate not found.");
+                    setCarData([]);
+                    console.log("License plate not found.");
+                }
+            }
+            catch (error) {
+                console.log("Data can not be entered.");
+            }
         };
         fetchData();
-    }, [licensePlate]);
+    }, [licensePlate, setError]);
 
 return (
     <section>
