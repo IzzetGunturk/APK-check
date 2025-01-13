@@ -7,6 +7,7 @@ I programmed an application where you can check the expiration date of your APK.
 - React
 - Tailwind CSS
 - API (Axios)
+- PWA
 
 ## Installation
 
