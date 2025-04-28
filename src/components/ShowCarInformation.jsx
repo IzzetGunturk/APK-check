@@ -96,7 +96,12 @@ function ShowCarInformation() {
                   APK expires on: <strong className='underline'>{sliceExpireDateApk}</strong>
                 </div>
                 <div className='pb-3 text-center text-base'>
-                  <strong className='underline'>{apkDateInDays}</strong> days left
+                  <p>
+                    <strong className='underline'>{apkDateInDays}</strong> days left, 
+                    <span className='text-green-700'>
+                      {apkDateInDays <= 61 ? " renewing APK is possible" : ""}
+                    </span>
+                  </p>
                 </div>
               </>
               );
