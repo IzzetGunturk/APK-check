@@ -97,9 +97,9 @@ function ShowCarInformation() {
                 </div>
                 <div className='pb-3 text-center text-base'>
                   <p>
-                    <strong className='underline'>{apkDateInDays}</strong> days left, 
+                    <strong className='underline'>{apkDateInDays}</strong> days left 
                     <span className='text-green-700'>
-                      {apkDateInDays <= 61 ? " renewing APK is possible" : ""}
+                      {apkDateInDays <= 61 ? ", renewing APK is possible" : ""}
                     </span>
                   </p>
                 </div>
