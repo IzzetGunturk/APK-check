@@ -81,7 +81,7 @@ function ShowCarInformation() {
 
               return (
               <div className='pt-3 pb-3 text-center text-base'>
-                Your APK expires on: <strong className='underline'>{sliceExpireDateApk}</strong>
+                APK expires on: <strong className='underline'>{sliceExpireDateApk}</strong>
               </div>
               );
             })}
