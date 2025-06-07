@@ -39,8 +39,8 @@ describe('ShowCarInformation component', () => {
       expect(screen.getByText('Corolla')).toBeInTheDocument();
     });
 
-    expect(screen.getByText(/Your APK expires on:/)).toHaveTextContent(
-        'Your APK expires on: 31-12-2024'
+    expect(screen.getByText(/APK expires on:/)).toHaveTextContent(
+      'APK expires on: 31-12-2024'
     )
 
     expect(screen.queryByText(/License plate not found/i)).not.toBeInTheDocument();
