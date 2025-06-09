@@ -13,7 +13,7 @@ function ShowCarInformation() {
   useEffect(() => {
     if (searchLicensePlate) {
       const formattedLicensePlate = searchLicensePlate.toUpperCase();
-  
+
       const fetchData = async () => {
         try {
           const result = await axios(
@@ -27,12 +27,12 @@ function ShowCarInformation() {
             setCarInformation([]);
             setErrorMessage('License plate not found.');
           }
-  
+
         } catch (error) {
           console.log("Data can not be fetched.");
         }
       };
-  
+
       fetchData();
     }
     else {
@@ -91,9 +91,19 @@ function ShowCarInformation() {
               const apkDateInDays = apkDateInMs / (1000 * 60 * 60 * 24);
 
               return (
-              <div className='pt-3 pb-3 text-center text-base'>
-                APK expires on: <strong className='underline'>{sliceExpireDateApk}</strong>
-              </div>
+              <>
+                <div className='pt-3 pb-3 text-center text-base'>
+                  APK expires on: <strong className='underline'>{sliceExpireDateApk}</strong>
+                </div>
+                <div className='pb-3 text-center text-base'>
+                  <p>
+                    <strong className='underline'>{apkDateInDays}</strong> days left 
+                    <span className='text-green-700 font-bold'>
+                      {apkDateInDays <= 61 ? ", renewing APK is possible" : ""}
+                    </span>
+                  </p>
+                </div>
+              </>
               );
             })}
           </div>
