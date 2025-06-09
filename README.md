@@ -1,4 +1,4 @@
-# 🚗 APK-check application
+# 🚗🧑‍🔧 APK-check application
 
 I programmed an application where you can check the expiration date of your APK. 
 
@@ -9,6 +9,9 @@ I programmed an application where you can check the expiration date of your APK.
 - JavaScript
 - API (Axios)
 - PWA
+  
+Unit test:
+- Jest
 
 ## Installation
 
