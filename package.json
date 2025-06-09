@@ -1,5 +1,5 @@
 {
-  "name": "APK-check",
+  "name": "apkcheck",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,32 +7,25 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "jest"
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
-    "axios": "^1.8.2",
+    "axios": "^1.7.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.27.2",
-    "@babel/preset-react": "^7.27.1",
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.3.0",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
-    "@vitejs/plugin-react": "^4.5.1",
+    "@typescript-eslint/eslint-plugin": "^8.33.1",
+    "@typescript-eslint/parser": "^8.33.1",
+    "@vitejs/plugin-react": "^3.1.0",
     "autoprefixer": "^10.4.13",
-    "jest": "^29.7.0",
-    "jest-environment-jsdom": "^30.0.0-beta.3",
+    "eslint": "^9.28.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
     "postcss": "^8.4.31",
     "tailwindcss": "^3.2.7",
-    "vite": "^6.3.5"
-  },
-  "jest": {
-    "testEnvironment": "jsdom",
-    "transform": {
-      "^.+\\.(js|jsx)$": "babel-jest"
-    }
+    "vite": "^4.5.9"
   }
 }
