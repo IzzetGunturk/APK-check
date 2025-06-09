@@ -91,7 +91,7 @@ function ShowCarInformation() {
               const apkDateInDays = apkDateInMs / (1000 * 60 * 60 * 24);
 
               return (
-              <>
+              <div key={car.kenteken}>
                 <div className='pt-3 pb-3 text-center text-base'>
                   APK expires on: <strong className='underline'>{sliceExpireDateApk}</strong>
                 </div>
@@ -103,7 +103,7 @@ function ShowCarInformation() {
                     </span>
                   </p>
                 </div>
-              </>
+              </div>
               );
             })}
           </div>
