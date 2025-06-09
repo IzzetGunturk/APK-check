@@ -13,6 +13,9 @@ I programmed an application where you can check the expiration date of your APK.
 Unit test:
 - Jest
 
+CI/CD:
+- This project uses GitHub Actions for continuous integration and continuous deployment (CI/CD)
+
 ## Installation
 
 Install dependencies:
