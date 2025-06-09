@@ -73,15 +73,26 @@ function ShowCarInformation() {
 
             {carInformation.map((car) => {
 
+              const date = new Date();
+              const day = String(date.getDate()).padStart(2, '0');
+              const month = String(date.getMonth() + 1).padStart(2, '0');
+              const year = date.getFullYear();
+
               const expireDateApk = car.vervaldatum_apk;
-              const year = expireDateApk.slice(0, 4);
-              const month = expireDateApk.slice(4, 6);
-              const day = expireDateApk.slice(6, 8);
-              const sliceExpireDateApk = `${day}-${month}-${year}`
+              const apkYear = expireDateApk.slice(0, 4);
+              const apkMonth = expireDateApk.slice(4, 6);
+              const apkDay = expireDateApk.slice(6, 8);
+              const sliceExpireDateApk = `${apkDay}-${apkMonth}-${apkYear}`
+
+              const dateToday = new Date(`${year}-${month}-${day}`)
+              const dateApk = new Date(`${apkYear}-${apkMonth}-${apkDay}`)
+
+              const apkDateInMs = dateApk - dateToday;
+              const apkDateInDays = apkDateInMs / (1000 * 60 * 60 * 24);
 
               return (
               <div className='pt-3 pb-3 text-center text-base'>
-                Your APK expires on: <strong className='underline'>{sliceExpireDateApk}</strong>
+                APK expires on: <strong className='underline'>{sliceExpireDateApk}</strong>
               </div>
               );
             })}
